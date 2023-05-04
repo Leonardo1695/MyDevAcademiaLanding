@@ -1,0 +1,97 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #FB68A9, #EE2B7B, #3E465C, #191C24);
+	background-size: 200% 200%;
+}
+
+.container.animate {
+  animation: gradient 10s ease infinite;
+  animation-fill-mode:forwards;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 30em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+/* .logo:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+@keyframes beat{
+	to { 
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.fade-out {
+  animation: fadeOut 2.5s ease-out;
+  animation-fill-mode:forwards;
+}
+
+@keyframes fadeOut{
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo.animate {
+    animation: beat .55s infinite alternate;
+	  transform-origin: center;
+  }
+}
+
+.card {
+  padding: 2em;
+}
